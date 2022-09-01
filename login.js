@@ -2,9 +2,9 @@ class Login{
     constructor(form, fields){
         this.fields =  fields
         this.form = form
-        this.submitOnValidation();
+        this.approveOnValidation();
     }
-    submitOnValidation(){
+    approveOnValidation(){
         let self = this
 
         this.form.addEventListener("submit", (e) => {
@@ -16,15 +16,18 @@ class Login{
                 //this confirms if input keyed in on the fields is reflected on the console
                 if(self.approveFields(input) == false){
                     error++;
+                    alert("Unsuccessful login!")
                 }
                
             })
             if(error == 0){
                 //log-in api
-                //console.log("success")
-                this.form.submit();
+                let username = document.getElementById('username').value
+              alert(`${username} has logged in successfully!`)
+
             }
         })
+
     }
     approveFields(field){
         if(field.value.trim() == ''){
@@ -42,6 +45,7 @@ class Login{
             if (errorMessage){
                 errorMessage.innerText.remove("input-error")
             }
+            field.classList.remove('input-error')
         }
         if (status == "error"){
             errorMessage.innerText = message;
@@ -51,6 +55,7 @@ class Login{
     }
 
 }
+
 
 const form = document.querySelector(".loginForm")
 

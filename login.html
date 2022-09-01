@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/login.css">
     
 </head>
-<body class="Login" style="background-color:#a15050 ;">
+<body class="Login" style="background-color:#a15050 ; font-family: sans-serif;">
     <div class="container">
         <h2 class="text-center">Login</h2>
         <form class="loginForm">
@@ -17,14 +17,36 @@
                 <input type="text" id="username" class="input">
                 <span class="error-message"></span>
             </div>
+            <br>
             <div class="input-form">
                 <label for="password" class="label">Password</label>
-                <input type="password" id="password" class="password">
+                <input type="password" id="password" class="input">
                 <span class="error-message"></span>
             </div>
-            <input type="submit" class="button" value="Login">
+            <br>
+            <input type="submit" class="button" value="Login" click="submit()">
         </form>
+        <p id="demo"></p>
     </div>
+        <!-- <script>
+        function submit() {
+        var username = document.getElementById("username").value;
+
+        // If the letter is "c"
+        if (letter === " ") {
+            text = ("username");
+            
+        // If the letter is "b" or "d"
+        } else if (letter === "" || letter === " ") {
+            text = "Close, but not close enough.";
+            
+        // If the letter is anything else
+        } else {
+            text = "Waaay off..";
+        }
+        document.getElementById("demo").innerHTML = username;
+        }
+    </script> -->
     <script src="/login.js"></script>
 </body>
 </html>
